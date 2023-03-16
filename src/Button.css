@@ -1,0 +1,10 @@
+.button-wrap {
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: rgb(88, 90, 88);
+    color: white;
+    flex: 1;
+}
