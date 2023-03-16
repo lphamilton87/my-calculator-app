@@ -4,7 +4,9 @@
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    background-color: rgb(88, 90, 88);
-    color: white;
+    background-color: rgb(126, 129, 126);
+    color: rgb(2, 1, 1);
     flex: 1;
+    margin: 4px;
+    border-radius: 50px;
 }

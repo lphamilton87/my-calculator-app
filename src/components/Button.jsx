@@ -1,8 +1,8 @@
 import "../Button.css"
 
-const Button = ({symbol}) => {
+const Button = ({symbol, colour}) => {
     return (
-        <div className="button-wrap">
+        <div className="button-wrap" style={{backgroundColor: colour}}>
             {symbol}
         </div>
     )

@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: #f6f3f3;
 }
 
 .App {
@@ -9,7 +9,7 @@ body {
 }
 
 .calc-container {
-  background-color: white;
+  background-color: rgb(3, 2, 2);
   width: 400px;
   border-radius: 16px;
 }
