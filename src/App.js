@@ -1,11 +1,29 @@
+import { useState } from "react";
 import Button from "./components/Button"
 import Input from "./components/Input"
-import { useState } from "react";
 import './App.css';
+import * as math from "mathjs";
 
 function App() {
-const [calculation, setCalculation] = useState("0")
+const [calculation, setCalculation] = useState("")
 const [result, setResult] = useState("")
+
+const addToCalculation = (val) => {
+  setCalculation((calculation) => 
+    [...calculation, val]
+  );
+};
+
+const calculateResult = () => {
+   const input = calculation.join("");
+
+   setResult(math.evaluate(input))
+}
+
+const resetCalculation = () => {
+  setCalculation("")
+  setResult("")
+}
 
 const orangeButtons = '#ff9900'
 
@@ -14,30 +32,30 @@ const orangeButtons = '#ff9900'
       <div className="calc-container">
         <Input calculation={calculation} result={result}/>
         <div className="row">
-        <Button symbol="7"/>
-        <Button symbol="8"/>
-        <Button symbol="9"/>
-        <Button symbol="/" colour={orangeButtons}/>
+        <Button symbol="7" handleClick={addToCalculation} />
+        <Button symbol="8" handleClick={addToCalculation}/>
+        <Button symbol="9" handleClick={addToCalculation}/>
+        <Button symbol="/" colour={orangeButtons} handleClick={addToCalculation} />
         </div>
         <div className="row">
-        <Button symbol="4"/>
-        <Button symbol="5"/>
-        <Button symbol="6"/>
-        <Button symbol="*" colour={orangeButtons}/>
+        <Button symbol="4" handleClick={addToCalculation}/>
+        <Button symbol="5" handleClick={addToCalculation}/>
+        <Button symbol="6" handleClick={addToCalculation}/>
+        <Button symbol="*" colour={orangeButtons} handleClick={addToCalculation}/>
         </div>
         <div className="row">
-        <Button symbol="1"/>
-        <Button symbol="2"/>
-        <Button symbol="3"/>
-        <Button symbol="+" colour={orangeButtons}/>
+        <Button symbol="1" handleClick={addToCalculation}/>
+        <Button symbol="2" handleClick={addToCalculation}/>
+        <Button symbol="3" handleClick={addToCalculation}/>
+        <Button symbol="+" colour={orangeButtons} handleClick={addToCalculation}/>
         </div>
         <div className="row">
-        <Button symbol="0"/>
-        <Button symbol="."/>
-        <Button symbol="=" colour={orangeButtons}/>
-        <Button symbol="-" colour={orangeButtons}/>
+        <Button symbol="0" handleClick={addToCalculation}/>
+        <Button symbol="." handleClick={addToCalculation}/>
+        <Button symbol="=" colour={orangeButtons} handleClick={calculateResult}/>
+        <Button symbol="-" colour={orangeButtons} handleClick={addToCalculation}/>
         </div>
-        <Button symbol="Clear"/>
+        <Button symbol="AC" handleClick={resetCalculation}/>
       </div>
      </div>
 
