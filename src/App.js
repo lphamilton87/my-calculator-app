@@ -58,7 +58,6 @@ const orangeButtons = '#ff9900'
         <Button symbol="AC" handleClick={resetCalculation}/>
       </div>
      </div>
-
   )
 }
 
