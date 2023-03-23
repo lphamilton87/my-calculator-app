@@ -1,6 +1,6 @@
 # My-Calculator-App
 
-Here is a simple calculator built in the Iphone style, developed using React
+Here is a simple calculator built in the style of an iphone and developed using React
 
 The Math.js library was installed and imported for this app. As you click the numbers and symbols they are held in state as 'calculation'. When clicking '=' it calls the math.evaluate function on the expression provided
 
